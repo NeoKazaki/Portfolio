@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J.A Portfolio</title>
+  <link rel="icon" type="image/png" href="Lauvinn-Logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ANIMATED BACKGROUND CANVAS -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="Lauvinn-Logo.png" alt="Lauvinn Logo" class="nav-logo-img" />
+      <span class="nav-logo-text">JA<span class="nav-logo-dot">.</span>Port</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#artworks">Artworks</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">John Anniluv <span class="hero-name-glow">A. Atag</span></h1>
+      <h2 class="hero-role"><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="hero-tagline">I’m a dedicated IT student and commissioned artist with 2 years of experience creating clean, expressive illustrations, along with foundational experience in web development.
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <div class="avatar-ring">
+        <div class="avatar-placeholder">
+          <img src="profile.png" alt="John Anniluv A. Atag" />
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header reveal">
+      <h2>About <span>Me</span></h2>
+      <div class="underline"></div>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Hello! I'm <strong>John Anniluv A. Atag</strong>, a dedicated IT student and commissioned artist based in Naga City. I have 2 years of experience creating clean, expressive traditional and digital illustrations.</p>
+        <p>I'm a strong communicator, skilled in client negotiations and advertising, ensuring clear collaboration and effective promotion of my work. I combine creativity and technical knowledge to deliver consistent, high-quality visual outputs.</p>
+        <p>Experienced in digital illustration using <strong>Medibang Paint</strong> and <strong>IbisPaint X</strong>, specializing in clean linework, expressive styles, and original character art.</p>
+        <p>Currently taking up IT at <strong>STI Naga City</strong>, I'm passionate about blending art and technology to build meaningful digital experiences.</p>
+        <div class="about-info">
+          <div><i class="fa-solid fa-graduation-cap"></i> <strong>Education:</strong> STI Naga City — IT (2nd Year, Present)</div>
+          <div><i class="fa-solid fa-school"></i> <strong>Previous:</strong> STI Pasay EDSA — IT (1st Year)</div>
+          <div><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Naga City, Philippines</div>
+          <div><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> NeoKazaki@gmail.com</div>
+        </div>
+
+        <div class="achievements">
+            <h4><i class="fa-solid fa-trophy"></i> Achievements & Certifications</h4>
+            <ul>
+              <li>🏅 Participant — Manila Bulletin Fest 2020</li>
+              <li>🥈 Poster Making 2nd Placer — PNHS 2018</li>
+              <li>🥈 Poster Making 2nd Placer — Buwan ng Wika 2024, STI Naga</li>
+              <li>🏆 1st Runner Up — Art Exhibit 2024, STI Pasay EDSA</li>
+              <li>🎖️ Outstanding Service as President of E.A.O — NSTP 2024, STI Pasay EDSA</li>
+              <li>📋 Certificate of Perfect Attendance — June 2024, STI Pasay EDSA</li>
+            </ul>
+          </div>
+
+        <a href="#" class="btn btn-primary" download><i class="fa-solid fa-download"></i> Download Resume</a>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-projects">3+</span>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">Years as Artist</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Skills Learned</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-artworks">0</span>
+          <span class="stat-label">Artworks Added</span>
+        </div>
+        <div class="stat-card stat-card-wide">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Achievements & Certificates</span>
+        </div>
+        <div class="cert-gallery">
+          <div class="cert-item" onclick="openCert('Cert1.jpg')">
+            <img src="Cert1.jpg" alt="Certificate 1" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-item" onclick="openCert('Cert2.jpg')">
+            <img src="Cert2.jpg" alt="Certificate 2" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-item" onclick="openCert('Cert3.jpg')">
+            <img src="Cert3.jpg" alt="Certificate 3" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="cert-item" onclick="openCert('Cert4.jpg')">
+            <img src="Cert4.jpg" alt="Certificate 4" />
+            <div class="cert-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <h2>My <span>Skills</span></h2>
+      <div class="underline"></div>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-category">
+        <h3>Web & Programming</h3>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-info"><span>HTML</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>CSS</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>JavaScript</span><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Java</span><span>65%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>C#</span><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>AI Prompting</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Arts & Soft Skills</h3>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-info"><span>Digital Art</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Traditional Art</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Digital Collaging</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Photography</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Communication & Negotiation</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Encoding</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tech-icons reveal">
+      <div class="tech-icon"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+      <div class="tech-icon"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+      <div class="tech-icon"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+      <div class="tech-icon"><i class="fa-brands fa-java"></i><span>Java</span></div>
+      <div class="tech-icon"><i class="fa-solid fa-code"></i><span>C#</span></div>
+      <div class="tech-icon"><i class="fa-solid fa-robot"></i><span>AI Prompting</span></div>
+      <div class="tech-icon"><i class="fa-solid fa-palette"></i><span>Digital Art</span></div>
+      <div class="tech-icon"><i class="fa-solid fa-camera"></i><span>Photography</span></div>
+      <div class="tech-icon"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <h2>My <span>Projects</span></h2>
+      <div class="underline"></div>
+      <button id="projectLockBtn" class="admin-lock-btn" aria-label="Admin access" title="Admin">
+        <i class="fa-solid fa-lock" id="projectLockIcon"></i>
+      </button>
+    </div>
+
+    <!-- PROJECT EDITOR PANEL (admin only) -->
+    <div class="artwork-editor" id="projectEditor">
+      <div class="editor-header">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Add / Edit Project</h3>
+        <span class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin Mode</span>
+      </div>
+      <div class="editor-form">
+        <div class="editor-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="pj-title" placeholder="Project title" />
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="pj-category">
+              <option value="app">App</option>
+              <option value="game">Game</option>
+              <option value="network">Network</option>
+              <option value="web">Web</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="pj-desc" rows="3" placeholder="Short description of the project"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Technologies Used</label>
+          <input type="text" id="pj-tech" placeholder="e.g. C#, .NET, Windows Forms" />
+        </div>
+        <div class="editor-row">
+          <div class="form-group">
+            <label>GitHub Link (optional)</label>
+            <input type="url" id="pj-github" placeholder="https://github.com/..." />
+          </div>
+          <div class="form-group">
+            <label>Live Demo Link (optional)</label>
+            <input type="url" id="pj-demo" placeholder="https://..." />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Preview Image (optional)</label>
+          <div class="image-upload-area" id="projectImageUploadArea">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p>Click or drag & drop an image</p>
+            <input type="file" id="pj-image" accept="image/*" />
+          </div>
+          <img id="pj-preview" class="image-preview" src="" alt="Preview" />
+        </div>
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="addProjectBtn"><i class="fa-solid fa-plus"></i> Add Project</button>
+          <button class="btn btn-outline" id="cancelProjectBtn" style="display:none"><i class="fa-solid fa-xmark"></i> Cancel</button>
+          <button class="btn btn-outline logout-btn" id="projectLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-btns reveal" id="projectFilters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="app">App</button>
+      <button class="filter-btn" data-filter="game">Game</button>
+      <button class="filter-btn" data-filter="network">Network</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+    </div>
+
+    <div class="projects-grid reveal" id="projectsGrid">
+
+      <div class="project-card" data-category="app">
+        <div class="project-img">
+          <div class="project-img-placeholder"><i class="fa-solid fa-cash-register"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/NeoKazaki" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Cashier Application</h3>
+          <p>A desktop cashier system built in C# that handles product listings, transactions, and receipt generation. Designed for small retail use cases with a clean and intuitive UI.</p>
+          <div class="project-tags">
+            <span>C#</span><span>.NET</span><span>Windows Forms</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="game">
+        <div class="project-img">
+          <div class="project-img-placeholder"><i class="fa-solid fa-gamepad"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/NeoKazaki" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>TypePhoon Game</h3>
+          <p>A typing speed game where players race against a storm by typing falling words correctly. Built to improve typing accuracy and speed in a fun, interactive way.</p>
+          <div class="project-tags">
+            <span>Java</span><span>Game Logic</span><span>OOP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="network">
+        <div class="project-img">
+          <div class="project-img-placeholder"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="project-overlay">
+            <a href="https://github.com/NeoKazaki" target="_blank" class="btn btn-sm btn-outline">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Network Design Project</h3>
+          <p>A structured network topology design for a simulated office environment. Includes IP addressing, subnetting, VLAN configuration, and device placement using Cisco Packet Tracer.</p>
+          <div class="project-tags">
+            <span>Networking</span><span>Cisco Packet Tracer</span><span>Subnetting</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECT LOGIN MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-box">
+      <button class="modal-close" id="projectModalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-icon"><i class="fa-solid fa-lock"></i></div>
+      <h3>Admin Access</h3>
+      <p>Enter your password to manage projects.</p>
+      <div class="form-group">
+        <input type="password" id="projectPassword" placeholder="Password" />
+      </div>
+      <p class="modal-error" id="projectModalError"></p>
+      <button class="btn btn-primary btn-full" id="projectLoginBtn"><i class="fa-solid fa-unlock"></i> Unlock</button>
+    </div>
+  </div>
+
+  <!-- ARTWORKS -->
+  <section id="artworks">
+    <div class="section-header reveal">
+      <h2>My <span>Artworks</span></h2>
+      <div class="underline"></div>
+      <p class="section-sub">Traditional & Digital illustrations, character art, and more.</p>
+      <!-- SECRET ADMIN LOCK ICON -->
+      <button id="adminLockBtn" class="admin-lock-btn" aria-label="Admin access" title="Admin">
+        <i class="fa-solid fa-lock" id="adminLockIcon"></i>
+      </button>
+    </div>
+
+    <!-- EDITOR PANEL (admin only) -->
+    <div class="artwork-editor" id="artworkEditor">
+      <div class="editor-header">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Add / Edit Artwork</h3>
+        <span class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin Mode</span>
+      </div>
+      <div class="editor-form">
+        <div class="editor-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="aw-title" placeholder="Artwork title" />
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="aw-category">
+              <option value="digital">Digital Art</option>
+              <option value="traditional">Traditional Art</option>
+              <option value="character">Character Art</option>
+              <option value="collage">Collage</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" id="aw-desc" placeholder="Short description of the artwork" />
+        </div>
+        <div class="form-group">
+          <label>Tools Used</label>
+          <input type="text" id="aw-tools" placeholder="e.g. MediBang Paint, IbisPaint X" />
+        </div>
+        <div class="form-group">
+          <label>Image</label>
+          <div class="image-upload-area" id="imageUploadArea">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p>Click or drag & drop an image</p>
+            <input type="file" id="aw-image" accept="image/*" />
+          </div>
+          <img id="aw-preview" class="image-preview" src="" alt="Preview" />
+        </div>
+        <div class="editor-actions">
+          <button class="btn btn-primary" id="addArtworkBtn"><i class="fa-solid fa-plus"></i> Add Artwork</button>
+          <button class="btn btn-outline" id="cancelEditBtn" style="display:none"><i class="fa-solid fa-xmark"></i> Cancel</button>
+          <button class="btn btn-outline logout-btn" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-btns reveal" id="artworkFilters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="digital">Digital</button>
+      <button class="filter-btn" data-filter="traditional">Traditional</button>
+      <button class="filter-btn" data-filter="character">Character</button>
+      <button class="filter-btn" data-filter="collage">Collage</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="artworks-grid reveal" id="artworksGrid">
+      <div class="artwork-empty" id="artworkEmpty">
+        <i class="fa-solid fa-image"></i>
+        <p>No artworks added yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN LOGIN MODAL -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-icon"><i class="fa-solid fa-lock"></i></div>
+      <h3>Admin Access</h3>
+      <p>Enter your password to manage artworks.</p>
+      <div class="form-group">
+        <input type="password" id="adminPassword" placeholder="Password" />
+      </div>
+      <p class="modal-error" id="modalError"></p>
+      <button class="btn btn-primary btn-full" id="adminLoginBtn"><i class="fa-solid fa-unlock"></i> Unlock</button>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="underline"></div>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Let's work together</h3>
+        <p>Have a commission, project, or collaboration in mind? My inbox is always open.</p>
+        <div class="contact-links">
+          <a href="mailto:NeoKazaki@gmail.com"><i class="fa-solid fa-envelope"></i> NeoKazaki@gmail.com</a>
+          <a href="https://www.facebook.com/johnanniluv.atag" target="_blank"><i class="fa-brands fa-facebook"></i> John Anniluv Atag</a>
+          <a href="https://github.com/NeoKazaki" target="_blank"><i class="fa-brands fa-github"></i> github.com/NeoKazaki</a>
+          <a href="https://www.linkedin.com/in/john-anniluv-atag-67346418a/" target="_blank"><i class="fa-brands fa-linkedin"></i> John Anniluv Atag</a>
+          <a href="https://www.instagram.com/lauviax/" target="_blank"><i class="fa-brands fa-instagram"></i> @lauviax</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://github.com/NeoKazaki" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/john-anniluv-atag-67346418a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/lauviax/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/johnanniluv.atag" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <p>Designed & Built by <span>John Anniluv A. Atag</span> &copy; 2026</p>
+      <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+    <div class="footer-disclaimer">
+      <p>
+        I leverage
+        <a href="https://chatgpt.com" target="_blank" class="tool-link">ChatGPT</a>
+        for ideation, debugging, and content refinement,
+        <a href="https://code.visualstudio.com" target="_blank" class="tool-link">Visual Studio Code</a>
+        for building and optimizing this portfolio website, and
+        <a href="https://kiro.dev" target="_blank" class="tool-link">Kiro App</a>
+        for organizing design workflows. I also use
+        <a href="https://github.com" target="_blank" class="tool-link">GitHub</a>
+        for version control and deploying my projects through a live server domain.
+      </p>
+    </div>
+  </footer>
+
+  <!-- CERTIFICATE LIGHTBOX -->
+  <div class="modal-overlay" id="certModal">
+    <div class="cert-lightbox">
+      <button class="modal-close" id="certModalClose"><i class="fa-solid fa-xmark"></i></button>
+      <img id="certModalImg" src="" alt="Certificate" />
+    </div>
+  </div>
+
+  <!-- VIEW DETAIL MODAL -->
+  <div class="modal-overlay" id="viewModal">
+    <div class="modal-box view-modal-box">
+      <button class="modal-close" id="viewModalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="view-modal-inner">
+        <div class="view-modal-img" id="viewModalImg"></div>
+        <div class="view-modal-details">
+          <span class="artwork-category-badge" id="viewModalBadge"></span>
+          <h2 id="viewModalTitle"></h2>
+          <p id="viewModalDesc"></p>
+          <div class="view-modal-meta" id="viewModalMeta"></div>
+          <div class="view-modal-date" id="viewModalDate"></div>
+          <div class="view-modal-links" id="viewModalLinks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
