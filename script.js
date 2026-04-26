@@ -359,7 +359,7 @@ const _masterProjects = [
   { title: 'Portfolio Website', category: 'web', desc: 'My personal portfolio website showcasing my projects, artworks, skills, and achievements. Built with HTML, CSS, and JavaScript featuring dark/light mode, animated backgrounds, admin-protected content management, and responsive design.', tech: 'HTML, CSS, JavaScript', github: 'https://github.com/NeoKazaki/Portfolio', demo: '', image: 'Portfolio Project.png', dateAdded: 'April 25, 2026' }
 ];
 
-const PROJECT_VERSION = 'v6';
+const PROJECT_VERSION = 'v7';
 if (localStorage.getItem('projectsVersion') !== PROJECT_VERSION) {
   localStorage.setItem('projects', JSON.stringify(_masterProjects));
   localStorage.setItem('projectsVersion', PROJECT_VERSION);
