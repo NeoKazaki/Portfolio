@@ -72,14 +72,23 @@ contactForm.addEventListener('submit', (e) => {
   const btn = contactForm.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-  setTimeout(() => {
+  emailjs.send('service_a4ahz22', 'template_l8d3gio', {
+    from_name: name,
+    from_email: email,
+    message: message
+  }).then(() => {
     formStatus.textContent = "✓ Message sent! I'll get back to you soon.";
     formStatus.className = 'form-status success';
     contactForm.reset();
     btn.disabled = false;
     btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
     setTimeout(() => { formStatus.textContent = ''; formStatus.className = 'form-status'; }, 5000);
-  }, 1500);
+  }).catch(() => {
+    formStatus.textContent = '✗ Something went wrong. Please try again.';
+    formStatus.className = 'form-status error';
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+  });
 });
 
 // ===== ADMIN =====
