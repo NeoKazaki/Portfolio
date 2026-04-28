@@ -1,4 +1,4 @@
-#JA Portfolio
+#JA.Portfolio
 
 - I developed JA.Port as my personal portfolio website to showcase both my technical and creative work. As a 2nd year IT student at STI Naga City and a commissioned digital and traditional artist, I designed it to serve as my digital resume and creative hub where I can present my skills, projects, artworks, film work, achievements, and contact details to potential employers, clients, and collaborators.
 
