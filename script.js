@@ -23,11 +23,10 @@ navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => na
 
 // ===== ACTIVE NAV =====
 const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a');
+const navItems = document.querySelectorAll('.nav-links a, .nav-links-desktop a');
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
-  // Treat film section as part of projects for nav highlighting
   if (current === 'film') current = 'projects';
   navItems.forEach(link => {
     link.classList.remove('active');
@@ -570,7 +569,7 @@ updateStats();
 // ===== GOOEY NAV =====
 (function initGooeyNav() {
   const container = document.querySelector('.gooey-nav-container');
-  const navUl = document.getElementById('navLinks');
+  const navUl = document.getElementById('navLinksDesktop');
   const filterEl = document.getElementById('gooeyFilter');
   const textEl = document.getElementById('gooeyText');
   if (!container || !navUl || !filterEl || !textEl) return;

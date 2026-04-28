@@ -210,28 +210,17 @@ section {
 [data-theme="light"] .nav-logo-img {
   filter: none;
 }
-.nav-links { display: flex; gap: 22px; }
-.nav-links a {
+.nav-links { display: none; }
+.nav-links-desktop { display: flex; gap: 22px; }
+.nav-links-desktop a {
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
   transition: color var(--transition);
 }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 2px;
-  background: var(--accent);
-  transition: width var(--transition);
-}
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-/* Inside gooey container, suppress the default underline/hover — gooey handles it */
-.gooey-nav-container .nav-links a::after { display: none; }
-.gooey-nav-container .nav-links a:hover,
-.gooey-nav-container .nav-links a.active { color: var(--text-muted); }
+.gooey-nav-container .nav-links-desktop a::after { display: none; }
+.gooey-nav-container .nav-links-desktop a:hover,
+.gooey-nav-container .nav-links-desktop a.active { color: var(--text-muted); }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 #themeToggle, .hamburger {
   background: var(--card);
@@ -596,7 +585,7 @@ footer span { color: var(--accent); font-weight: 600; }
 }
 
 @media (max-width: 640px) {
-  .gooey-nav-container { display: none; }
+  .gooey-nav-container { display: none !important; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -606,14 +595,14 @@ footer span { color: var(--accent); font-weight: 600; }
     right: 0;
     background: var(--bg2);
     border-bottom: 1px solid var(--border);
-    padding: 12px 5%;
+    padding: 8px 0;
     gap: 0;
     z-index: 999;
   }
   .nav-links.open { display: flex; }
   .nav-links li a {
     display: block;
-    padding: 12px 0;
+    padding: 13px 5%;
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-muted);
