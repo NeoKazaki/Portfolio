@@ -2,7 +2,7 @@
 
 **Subject:** Web Systems and Technologies
 
-**Developer:** John Anniluv A. Atag Live Site
+**Developer:** John Anniluv A. Atag
 
 **Professor:** Mr. Everild Gerd R. Pablo MBA
 
