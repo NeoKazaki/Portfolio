@@ -37,24 +37,24 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Pill Navigation with Particle Burst**
-- Found in: `index.html` — Line 22 (`<div class="gooey-nav-container">`) wrapping the `<nav>` (Lines 23–31) and two effect spans: Line 33 (`<span class="effect filter" id="gooeyFilter">`) and Line 34 (`<span class="effect text" id="gooeyText">`)
-- JavaScript: `script.js` — Line 554 (`(function initGooeyNav()`) — `makeParticles` function at Line 590, `updateEffectPosition` at Line 617, `activateItem` at Line 634, scroll sync at Line 663, resize handler at Line 686
-- CSS: `style.css` — Line 1276 (`/* ===== PILL NAV =====`) through end of file
-- What it does: The navigation links are wrapped in a `.gooey-nav-container`. When a nav item is clicked or the scroll position changes section, the active `<li>` receives the class `active`, which animates a smooth accent-colored pill behind the link text using a CSS `::before` pseudo-element (scale + opacity transition). Simultaneously, a JavaScript particle burst fires from the clicked item — 15 colored dot particles animate outward using CSS custom property keyframes (`--start-x`, `--end-x`, `--rotate`, `--scale`, `--color`). The particles are appended directly to the `<li>` and removed after their animation completes. The active item text turns white for contrast. On scroll, the active pill automatically follows the current section. On window resize, the pill repositions itself.
+- Found in: `index.html` — Line 32 (`<div class="gooey-nav-container">`) wrapping the desktop `<nav>` (Lines 33–43) with `<ul class="nav-links-desktop" id="navLinksDesktop">` and two effect spans: Line 44 (`<span class="effect filter" id="gooeyFilter">`) and Line 45 (`<span class="effect text" id="gooeyText">`)
+- JavaScript: `script.js` — Line 579 (`(function initGooeyNav()`) — `makeParticles` function at Line 605, `updateEffectPosition` at Line 632, `activateItem` at Line 649, scroll sync at Line 688, resize handler at Line 701
+- CSS: `style.css` — Line 1290 (`/* ===== PILL NAV =====`) through end of file
+- What it does: On desktop, the navigation links inside `.gooey-nav-container` use `#navLinksDesktop`. When a nav item is clicked or the scroll position changes section, the active `<li>` receives the class `active`, which animates a smooth accent-colored pill behind the link text using a CSS `::before` pseudo-element (scale + opacity transition). Simultaneously, a JavaScript particle burst fires from the clicked item — 15 colored dot particles animate outward using CSS custom property keyframes. On mobile (`max-width: 640px`), the entire `.gooey-nav-container` is hidden with `display: none !important` — no pill, no particles, no black backdrop.
 - Dark mode: pill uses `var(--accent)` purple
 - Light mode: pill uses `var(--accent)` navy blue, active text stays white
 
 
 **Active Link Highlighting**
 - Found in: `script.js` — Lines 24–37 (`// ===== ACTIVE NAV =====`)
-- What it does: A scroll event listener checks which section is currently in view. The matching nav `<li>` gets the class `active` which triggers the pill animation. The film section is mapped to the Projects nav item since it has no dedicated nav link.
+- What it does: A scroll event listener checks which section is currently in view. It updates active state on both `'.nav-links a'` (mobile) and `'.nav-links-desktop a'` (desktop) simultaneously. The film section is mapped to the Projects nav item since it has no dedicated nav link.
 
 
 **Hamburger Menu**
-- Found in: `index.html` — Line 38 (`<button class="hamburger" id="hamburger">`)
+- Found in: `index.html` — Line 48 (`<button class="hamburger" id="hamburger">`)
 - JavaScript: `script.js` — Lines 18–23 (`// ===== HAMBURGER =====`)
-- CSS: `style.css` — Line 599 (`@media (max-width: 640px)`) and Line 601 (`.hamburger { display: flex; }`)
-- What it does: On small screens, the full nav links are hidden and replaced with a hamburger icon. Clicking it toggles the class `open` on the nav links list, which makes them appear vertically. Clicking any link closes the menu again.
+- CSS: `style.css` — Line 587 (`@media (max-width: 640px)`) and Line 609 (`.hamburger { display: flex; }`)
+- What it does: On mobile, the gooey nav container is fully hidden and replaced with a hamburger button. Clicking it toggles the class `open` on `#navLinks` (a plain `<ul>` that lives outside the gooey container in the HTML), which drops down a clean list of links pinned under the navbar. Clicking any link closes the menu. The plain nav links have no pill or particle effects — just accent color on active/hover.
 
 
 **Dark/Light Mode Toggle**
@@ -307,8 +307,10 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 **Contact Form**
 - Found in: `index.html` — Lines 469–481 (`<form id="contactForm">`)
-- JavaScript: `script.js` — Lines 64–83 (contactForm submit handler)
-- What it does: Form submission is intercepted with `e.preventDefault()`. All three fields are validated. If valid, the submit button shows a spinner and is disabled. After 1.5 seconds a success message appears, the form resets, and the button is re-enabled. No actual email is sent — it is a simulated response.
+- JavaScript: `script.js` — Lines 63–90 (contactForm submit handler)
+- EmailJS SDK: `index.html` — Lines 10–11 (`emailjs` CDN script and `emailjs.init('DPLiPC0Q01Xuv3xF5')`)
+- Service ID: `service_a4ahz22` — Template ID: `template_l8d3gio`
+- What it does: Form submission is intercepted with `e.preventDefault()`. All three fields are validated. If valid, the submit button shows a spinner and is disabled. `emailjs.send()` is called with the sender's name, email, and message — this delivers the message directly to `NeoKazaki@gmail.com` via the configured EmailJS Gmail service. On success a confirmation message appears and the form resets. On failure an error message is shown. No backend server is required.
 
 
 **Social Links**
@@ -400,8 +402,14 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Font Awesome 6.5.0**
-- Loaded in: `index.html` — Line 10 (Font Awesome CDN link)
+- Loaded in: `index.html` — Line 9 (Font Awesome CDN link)
 - What it does: Provides all icons used throughout the site via CSS classes like `fa-solid fa-lock`.
+
+
+**EmailJS**
+- Loaded in: `index.html` — Lines 10–11 (EmailJS CDN and `emailjs.init()`)
+- Used in: `script.js` — Line 75 (`emailjs.send('service_a4ahz22', 'template_l8d3gio', {...})`)
+- What it does: A client-side email service that sends contact form submissions directly to `NeoKazaki@gmail.com` without any backend server. Uses the configured Gmail service (`service_a4ahz22`) and email template (`template_l8d3gio`) to format and deliver messages with the sender's name, email, and message content.
 
 
 **ChatGPT**
@@ -463,4 +471,4 @@ Portfolio/
 ```
 
 
-*Documentation last updated — April 28, 2026*
+*Documentation last updated — April 29, 2026*
