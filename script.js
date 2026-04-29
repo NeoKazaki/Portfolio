@@ -35,7 +35,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== TYPED EFFECT =====
-const roles = ['Web Developer', 'IT Student', 'Traditional Artist', 'Digital Artist', 'Freelancer'];
+const roles = ['Traditional & Digital Artist', 'UI/UX Designer', 'Web Developer', 'IT Support Specialist', 'Freelancer', 'Visual Graphic Designer'];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 const typedEl = document.getElementById('typed');
 function type() {
