@@ -60,6 +60,12 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => observer.observe(el));
 
+const revealFastEls = document.querySelectorAll('.reveal-fast');
+const observerFast = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+revealFastEls.forEach(el => observerFast.observe(el));
+
 // ===== CONTACT FORM =====
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
