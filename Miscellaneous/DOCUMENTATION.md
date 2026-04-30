@@ -2,7 +2,7 @@
 
 **Subject:** Web Systems and Technologies
 
-**Developer:** John Anniluv A. Atag
+**Developer:** John Anniluv A. Atag Live Site
 
 **Professor:** Mr. Everild Gerd R. Pablo MBA
 
@@ -157,7 +157,59 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Directly downloads `JA.Resume.pdf` when clicked using the HTML `download` attribute.
 
 
-**4. Skills Section**
+**4. Workstation Section**
+
+
+**Workstation Setup**
+- Found in: `index.html` — Lines 150–270 (`<section id="workstation">`)
+- CSS: `style.css` — Lines 353–670 (`/* ===== WORKSTATION =====`)
+- What it does: A dedicated section between About and Skills showcasing the physical setup used for development and creative work. The left column contains the workstation photo and the Brother printer card stacked vertically. The right column contains the PC specs table, upgrade note, and peripheral cards. The grid collapses to single column on mobile.
+
+
+**Workstation Photo**
+- Found in: `index.html` — Lines 159–162 (`.workstation-img-wrap`)
+- CSS: `style.css` — Lines 375–401 (`.workstation-img-wrap`, `.workstation-img`, `.workstation-badge`)
+- Image file: `Miscellaneous/WorkStation.jpg`
+- What it does: Displays the workstation photo with a purple "Work in Progress" badge overlaid at the top left. Clicking the image opens the certificate lightbox with the full-size photo. Hovering applies a subtle zoom effect.
+
+
+**PC Specifications**
+- Found in: `index.html` — Lines 185–228 (`.workstation-specs`, `.spec-list`)
+- CSS: `style.css` — Lines 462–580 (`.workstation-specs`, `.spec-list`, `.spec-item`, `.spec-label`, `.spec-value`, `.upgrade-tag`)
+- What it does: A styled table listing all PC hardware specs — Processor (Intel i7-11700), RAM (16GB with Expansion Planned tag), Graphics (Intel UHD 750 with Upgrade Planned tag), Storage (809GB with Expansion Planned tag), OS (Windows 11 Pro), System Type, Device Name (LAUVINS-DESK69), and Motherboard (H510M-HVS R2.0). Items with planned upgrades show a red `Expansion Planned` or `Upgrade Planned` badge.
+
+
+**Upgrade Note**
+- Found in: `index.html` — Lines 224–228 (`.spec-upgrade-note`)
+- CSS: `style.css` — Lines 555–580 (`.spec-upgrade-note`)
+- What it does: A card with a left purple border and rocket icon explaining the workstation is still a work in progress with planned upgrades for a dedicated GPU and additional storage.
+
+
+**Brother DCP-T426W Printer Card**
+- Found in: `index.html` — Lines 163–183 (`.printer-card`)
+- CSS: `style.css` — Lines 408–461 (`.printer-card`, `.printer-header`, `.printer-specs`, `.printer-spec-item`)
+- What it does: A card below the workstation photo listing all printer properties — Model Driver (Microsoft IPP Class Driver), Port (USB001), NTC No. (ESD-RCE-2128412), Machine SN (E82258G2H124059), Color (Yes), Double-sided (No), Speed (11 ppm), Max Resolution (600 dpi), Paper (A4), and Staple (No).
+
+
+**Peripheral Cards — TNW K16 Microphone**
+- Found in: `index.html` — Lines 230–249 (`.peripheral-card` — mic)
+- CSS: `style.css` — Lines 587–670 (`.peripheral-cards`, `.peripheral-card`, `.peripheral-header`, `.peripheral-specs`, `.peripheral-spec-item`)
+- What it does: A card displaying the TNW K16 USB condenser microphone specs — Type (Condenser), Polar Pattern (Cardioid), Connectivity (3.5mm Jack / USB), Audio Interface (3.5mm Headphone Jack), Controls (Volume, Echo/Reverb, Monitor knobs), Mute (One-click + LED), Enhancement (Noise Reduction + KTV Mode), and Lighting (Dynamic RGB Gradient).
+
+
+**Peripheral Cards — MIMIFASO PC-900 Headset**
+- Found in: `index.html` — Lines 250–269 (`.peripheral-card` — headset)
+- CSS: `style.css` — Lines 587–670 (shared peripheral card styles)
+- What it does: A card displaying the MIMIFASO PC-900 wired stereo headset specs — Connection (Wired Dual 3.5mm Jacks), Speaker Diameter (27mm–32mm), Impedance (32 Ohms), Frequency Response (20Hz–20KHz), Sensitivity (100dB–103dB), Microphone (Rotary Boom + Noise Reduction), Cable Length (1.45m–2.0m), and Material (ABS Plastic + PU Leather Earpads).
+
+
+**Reveal Fast Animation**
+- Found in: `script.js` — Lines 52–68 (`reveal-fast` IntersectionObserver)
+- CSS: `style.css` — Lines 897–906 (`.reveal-fast`, `.reveal-fast.visible`)
+- What it does: A secondary scroll reveal system with a lower threshold (`0.05`) used for large grid elements like the workstation grid. Triggers with only 5% of the element visible, preventing large sections from failing to animate in.
+
+
+**5. Skills Section**
 
 **Skill Progress Bars**
 - Found in: `index.html` — Lines 148–202 (`.skill-bars` inside each `.skill-category`)
@@ -172,7 +224,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: A row of icon cards displays each technology with its Font Awesome icon and label. Cards lift up on hover with a transform and box-shadow effect.
 
 
-**5. Projects Section**
+**6. Projects Section**
 
 **Admin Lock Icon**
 - Found in: `index.html` — Lines 224–227 (`<button id="projectLockBtn">`)
@@ -217,7 +269,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Edit and delete buttons are normally at `opacity: 0`. When `body.admin-mode` is active, CSS forces them to `opacity: 1 !important` on all cards.
 
 
-**6. Film Section**
+**7. Film Section**
 
 **Film Card Layout**
 - Found in: `index.html` — Lines 313–349 (`<section id="film">`)
@@ -251,7 +303,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Two certificate images related to the Alok short film are displayed in a 2-column grid at the bottom of the film card, below the watch buttons. Each image has the same hover overlay and zoom icon as the About section certificates. Clicking either opens the certificate lightbox with the full-size image.
 
 
-**7. Artworks Section**
+**8. Artworks Section**
 
 **Dynamic Artwork Gallery**
 - Found in: `script.js` — Lines 279–333 (`function renderArtworks()`)
@@ -271,7 +323,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Uses a version-controlled seed system. On first load or when the version changes, localStorage is force-reset with all 8 artworks using the correct `Artworks/` folder paths. On subsequent loads it merges seed data into existing artworks, always keeping image paths up to date. After seeding, `renderArtworks()` is called.
 
 
-**8. Admin System**
+**9. Admin System**
 
 **Admin Mode Activation**
 - Found in: `script.js` — Lines 208–217 (artwork admin login) and Lines 387–396 (project admin login)
@@ -289,7 +341,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: A single constant stores the admin password used by both the artworks and projects login modals.
 
 
-**9. View Detail Modal**
+**10. View Detail Modal**
 
 **Modal Trigger**
 - Found in: `script.js` — Lines 304–308 (artwork card click) and Lines 490–497 (project card click)
@@ -303,7 +355,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Three ways to close — clicking the ✕ button, clicking outside the modal box, or pressing Escape.
 
 
-**10. Contact Section**
+**11. Contact Section**
 
 **Contact Form**
 - Found in: `index.html` — Lines 469–481 (`<form id="contactForm">`)
@@ -318,7 +370,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: Square icon buttons for GitHub, LinkedIn, Instagram, and Facebook each link to John's actual profiles in a new tab.
 
 
-**11. Footer**
+**12. Footer**
 
 **Tools Disclaimer**
 - Found in: `index.html` — Lines 494–503 (`<div class="footer-disclaimer">`)
@@ -332,7 +384,7 @@ The site is fully responsive, works across all screen sizes, and features a mode
 - What it does: A square button with an up arrow icon that smooth-scrolls back to the top of the page.
 
 
-**12. Visual & Animation Features**
+**13. Visual & Animation Features**
 
 **Animated Gradient Background**
 - Found in: `style.css` — Line 18 (`[data-theme="dark"] body`) and Line 64 (`[data-theme="light"] body`)
@@ -467,8 +519,9 @@ Portfolio/
     ├── DOCUMENTATION.md               # This documentation file
     ├── JA.Resume.pdf                  # Downloadable resume linked in the About section
     ├── Lauvinn-Logo.png               # Site logo in navbar and browser tab favicon
-    └── profile.png                    # Profile photo in the hero section
+    ├── profile.png                    # Profile photo in the hero section
+    └── WorkStation.jpg                # Workstation setup photo in the Workstation section
 ```
 
 
-*Documentation last updated — April 29, 2026*
+*Documentation last updated — April 30, 2026*
