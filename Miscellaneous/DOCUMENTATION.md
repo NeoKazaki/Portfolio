@@ -161,9 +161,9 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Workstation Setup**
-- Found in: `index.html` — Lines 150–270 (`<section id="workstation">`)
+- Found in: `index.html` — Lines 150–310 (`<section id="workstation">`)
 - CSS: `style.css` — Lines 353–670 (`/* ===== WORKSTATION =====`)
-- What it does: A dedicated section between About and Skills showcasing the physical setup used for development and creative work. The left column contains the workstation photo and the Brother printer card stacked vertically. The right column contains the PC specs table, upgrade note, and peripheral cards. The grid collapses to single column on mobile.
+- What it does: A dedicated section between About and Skills showcasing the physical setup used for development and creative work. The left column contains the workstation photo, Brother printer card, and a device pair grid (Phone + Camera) stacked vertically. The right column contains the PC specs table, upgrade note, and peripheral cards (Mic + Headset). The grid collapses to single column on mobile.
 
 
 **Workstation Photo**
@@ -174,37 +174,45 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **PC Specifications**
-- Found in: `index.html` — Lines 185–228 (`.workstation-specs`, `.spec-list`)
+- Found in: `index.html` — Lines 185–260 (`.workstation-specs`, `.spec-list`)
 - CSS: `style.css` — Lines 462–580 (`.workstation-specs`, `.spec-list`, `.spec-item`, `.spec-label`, `.spec-value`, `.upgrade-tag`)
 - What it does: A styled table listing all PC hardware specs — Processor (Intel i7-11700), RAM (16GB with Expansion Planned tag), Graphics (Intel UHD 750 with Upgrade Planned tag), Storage (809GB with Expansion Planned tag), OS (Windows 11 Pro), System Type, Device Name (LAUVINS-DESK69), and Motherboard (H510M-HVS R2.0). Items with planned upgrades show a red `Expansion Planned` or `Upgrade Planned` badge.
 
 
 **Upgrade Note**
-- Found in: `index.html` — Lines 224–228 (`.spec-upgrade-note`)
+- Found in: `index.html` — Lines 261–265 (`.spec-upgrade-note`)
 - CSS: `style.css` — Lines 555–580 (`.spec-upgrade-note`)
 - What it does: A card with a left purple border and rocket icon explaining the workstation is still a work in progress with planned upgrades for a dedicated GPU and additional storage.
 
 
 **Brother DCP-T426W Printer Card**
-- Found in: `index.html` — Lines 163–183 (`.printer-card`)
+- Found in: `index.html` — Lines 163–182 (`.printer-card`)
 - CSS: `style.css` — Lines 408–461 (`.printer-card`, `.printer-header`, `.printer-specs`, `.printer-spec-item`)
-- What it does: A card below the workstation photo listing all printer properties — Model Driver (Microsoft IPP Class Driver), Port (USB001), NTC No. (ESD-RCE-2128412), Machine SN (E82258G2H124059), Color (Yes), Double-sided (No), Speed (11 ppm), Max Resolution (600 dpi), Paper (A4), and Staple (No).
+- What it does: A card below the workstation photo listing all printer properties — Model Driver (Microsoft IPP Class Driver), Port (USB001), NTC No. (ESD-RCE-2128412), Machine SN (E82258G2H124059), Color (Yes), Double-sided (No), Speed (11 ppm), Max Resolution (600 dpi).
+
+
+**Device Pair Grid — Infinix Note 40 Pro 5G and Sony Alpha a5000**
+- Found in: `index.html` — Lines 183–220 (`<div class="device-pair-grid">`)
+- CSS: `style.css` — `.device-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }`
+- What it does: A 2-column CSS Grid that places the phone and camera cards side by side below the printer card. Collapses to single column on screens below 640px. Both cards use the same `.printer-card` class pattern.
+- Infinix Note 40 Pro 5G — `fa-brands fa-android` icon — specs: Brand (Infinix), Model (Note 40 Pro 5G), RAM (12+12 GB), Storage (512 GB), OS (Android), Connectivity (5G).
+- Sony Alpha a5000 — `fa-solid fa-camera` icon — specs: Brand (Sony), Model (ILCE-5000), Type (Mirrorless), Sensor (APS-C CMOS 20.1MP), Storage (64GB SanDisk Card), Connectivity (Wi-Fi / NFC).
 
 
 **Peripheral Cards — TNW K16 Microphone**
-- Found in: `index.html` — Lines 230–249 (`.peripheral-card` — mic)
+- Found in: `index.html` — Lines 267–286 (`.peripheral-card` — mic)
 - CSS: `style.css` — Lines 587–670 (`.peripheral-cards`, `.peripheral-card`, `.peripheral-header`, `.peripheral-specs`, `.peripheral-spec-item`)
 - What it does: A card displaying the TNW K16 USB condenser microphone specs — Type (Condenser), Polar Pattern (Cardioid), Connectivity (3.5mm Jack / USB), Audio Interface (3.5mm Headphone Jack), Controls (Volume, Echo/Reverb, Monitor knobs), Mute (One-click + LED), Enhancement (Noise Reduction + KTV Mode), and Lighting (Dynamic RGB Gradient).
 
 
 **Peripheral Cards — MIMIFASO PC-900 Headset**
-- Found in: `index.html` — Lines 250–269 (`.peripheral-card` — headset)
+- Found in: `index.html` — Lines 287–306 (`.peripheral-card` — headset)
 - CSS: `style.css` — Lines 587–670 (shared peripheral card styles)
 - What it does: A card displaying the MIMIFASO PC-900 wired stereo headset specs — Connection (Wired Dual 3.5mm Jacks), Speaker Diameter (27mm–32mm), Impedance (32 Ohms), Frequency Response (20Hz–20KHz), Sensitivity (100dB–103dB), Microphone (Rotary Boom + Noise Reduction), Cable Length (1.45m–2.0m), and Material (ABS Plastic + PU Leather Earpads).
 
 
 **Reveal Fast Animation**
-- Found in: `script.js` — Lines 52–68 (`reveal-fast` IntersectionObserver)
+- Found in: `script.js` — Lines 63–68 (`reveal-fast` IntersectionObserver)
 - CSS: `style.css` — Lines 897–906 (`.reveal-fast`, `.reveal-fast.visible`)
 - What it does: A secondary scroll reveal system with a lower threshold (`0.05`) used for large grid elements like the workstation grid. Triggers with only 5% of the element visible, preventing large sections from failing to animate in.
 
@@ -517,6 +525,7 @@ Portfolio/
 │
 └── Miscellaneous/
     ├── DOCUMENTATION.md               # This documentation file
+    ├── WORKSTATION_DOCUMENTATION.md   # Detailed code breakdown of the Workstation section
     ├── JA.Resume.pdf                  # Downloadable resume linked in the About section
     ├── Lauvinn-Logo.png               # Site logo in navbar and browser tab favicon
     ├── profile.png                    # Profile photo in the hero section
