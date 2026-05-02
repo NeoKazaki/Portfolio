@@ -134,9 +134,9 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Certificate Gallery**
-- Found in: `index.html` — Lines 118–131 (`<div class="cert-gallery">`)
-- CSS: `style.css` — Lines 1044–1079 (`.cert-gallery`, `.cert-item`, `.cert-overlay`)
-- What it does: Four certificate images (Cert1–4.jpg) are displayed in a 2×2 grid in the right column of the About section. Each image has a hover overlay with a zoom icon. Clicking any opens the certificate lightbox.
+- Found in: `index.html` — Lines 128–158 (`<div class="cert-gallery">`)
+- CSS: `style.css` — Line 1402 (`.cert-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }`)
+- What it does: Seven certificate images (Cert1–7.jpg) are displayed in a responsive auto-fill grid in the right column of the About section. Each image has a hover overlay with a zoom icon. Clicking any opens the certificate lightbox. The grid automatically adjusts columns based on available width so all 7 certs flow without gaps.
 
 
 **Certificate Lightbox**
@@ -147,9 +147,9 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Live Stat Cards**
-- Found in: `index.html` — Lines 97–131 (`.about-stats` block)
+- Found in: `index.html` — Lines 109–158 (`.about-stats` block)
 - JavaScript: `script.js` — Lines 92–105 (`function updateStats()`)
-- What it does: Five cards display key numbers. Projects Completed and Artworks Added are read from `localStorage` and update automatically whenever items are added or deleted. The other three are fixed values.
+- What it does: Five cards display key numbers. Projects Completed and Artworks Added are read from `localStorage` and update automatically whenever items are added or deleted. The Achievements & Certificates card shows `7` reflecting all current certificates. The other two are fixed values.
 
 
 **Download Resume Button**
@@ -174,13 +174,13 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **PC Specifications**
-- Found in: `index.html` — Lines 185–260 (`.workstation-specs`, `.spec-list`)
+- Found in: `index.html` — Lines 197–284 (`.workstation-specs`, `.spec-list`)
 - CSS: `style.css` — Lines 462–580 (`.workstation-specs`, `.spec-list`, `.spec-item`, `.spec-label`, `.spec-value`, `.upgrade-tag`)
-- What it does: A styled table listing all PC hardware specs — Processor (Intel i7-11700), RAM (16GB with Expansion Planned tag), Graphics (Intel UHD 750 with Upgrade Planned tag), Storage (809GB with Expansion Planned tag), OS (Windows 11 Pro), System Type, Device Name (LAUVINS-DESK69), and Motherboard (H510M-HVS R2.0). Items with planned upgrades show a red `Expansion Planned` or `Upgrade Planned` badge.
+- What it does: A styled table listing all PC hardware specs — Processor (Intel i7-11700), RAM (16GB — Expansion Planned), Graphics (Intel UHD 750 — Upgrade Planned), Storage (809GB — Expansion Planned), OS (Windows 11 Pro), System Type, Device Name (LAUVINS-DESK69), Motherboard (H510M-HVS R2.0), Monitor (BenQ DL2020), Bluetooth (CSR8510 A10), and Wi-Fi (Realtek RTL8188EU 802.11n USB 2.0). Items with planned upgrades show a red `Expansion Planned` or `Upgrade Planned` badge.
 
 
 **Upgrade Note**
-- Found in: `index.html` — Lines 261–265 (`.spec-upgrade-note`)
+- Found in: `index.html` — Lines 285–289 (`.spec-upgrade-note`)
 - CSS: `style.css` — Lines 555–580 (`.spec-upgrade-note`)
 - What it does: A card with a left purple border and rocket icon explaining the workstation is still a work in progress with planned upgrades for a dedicated GPU and additional storage.
 
@@ -192,21 +192,21 @@ The site is fully responsive, works across all screen sizes, and features a mode
 
 
 **Device Pair Grid — Infinix Note 40 Pro 5G and Sony Alpha a5000**
-- Found in: `index.html` — Lines 183–220 (`<div class="device-pair-grid">`)
-- CSS: `style.css` — `.device-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }`
+- Found in: `index.html` — Lines 195–232 (`<div class="device-pair-grid">`)
+- CSS: `style.css` — Line 587 (`.device-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }`)
 - What it does: A 2-column CSS Grid that places the phone and camera cards side by side below the printer card. Collapses to single column on screens below 640px. Both cards use the same `.printer-card` class pattern.
 - Infinix Note 40 Pro 5G — `fa-brands fa-android` icon — specs: Brand (Infinix), Model (Note 40 Pro 5G), RAM (12+12 GB), Storage (512 GB), OS (Android), Connectivity (5G).
 - Sony Alpha a5000 — `fa-solid fa-camera` icon — specs: Brand (Sony), Model (ILCE-5000), Type (Mirrorless), Sensor (APS-C CMOS 20.1MP), Storage (64GB SanDisk Card), Connectivity (Wi-Fi / NFC).
 
 
 **Peripheral Cards — TNW K16 Microphone**
-- Found in: `index.html` — Lines 267–286 (`.peripheral-card` — mic)
+- Found in: `index.html` — Lines 290–309 (`.peripheral-card` — mic)
 - CSS: `style.css` — Lines 587–670 (`.peripheral-cards`, `.peripheral-card`, `.peripheral-header`, `.peripheral-specs`, `.peripheral-spec-item`)
 - What it does: A card displaying the TNW K16 USB condenser microphone specs — Type (Condenser), Polar Pattern (Cardioid), Connectivity (3.5mm Jack / USB), Audio Interface (3.5mm Headphone Jack), Controls (Volume, Echo/Reverb, Monitor knobs), Mute (One-click + LED), Enhancement (Noise Reduction + KTV Mode), and Lighting (Dynamic RGB Gradient).
 
 
 **Peripheral Cards — MIMIFASO PC-900 Headset**
-- Found in: `index.html` — Lines 287–306 (`.peripheral-card` — headset)
+- Found in: `index.html` — Lines 310–329 (`.peripheral-card` — headset)
 - CSS: `style.css` — Lines 587–670 (shared peripheral card styles)
 - What it does: A card displaying the MIMIFASO PC-900 wired stereo headset specs — Connection (Wired Dual 3.5mm Jacks), Speaker Diameter (27mm–32mm), Impedance (32 Ohms), Frequency Response (20Hz–20KHz), Sensitivity (100dB–103dB), Microphone (Rotary Boom + Noise Reduction), Cable Length (1.45m–2.0m), and Material (ABS Plastic + PU Leather Earpads).
 
@@ -514,6 +514,9 @@ Portfolio/
 │   ├── Cert2.jpg                      # Certificate image in About section
 │   ├── Cert3.jpg                      # Certificate image in About section
 │   ├── Cert4.jpg                      # Certificate image in About section
+│   ├── Cert5.jpg                      # Certificate image in About section
+│   ├── Cert6.jpg                      # Certificate image in About section
+│   ├── Cert7.jpg                      # Certificate image in About section
 │   ├── AlokCert1.jpg                  # Alok film participation certificate
 │   └── AlokCert2.jpg                  # Alok film recognition certificate
 │
@@ -533,4 +536,4 @@ Portfolio/
 ```
 
 
-*Documentation last updated — April 30, 2026*
+*Documentation last updated — May 1, 2026*
